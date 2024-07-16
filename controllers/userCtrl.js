@@ -99,7 +99,7 @@ exports.userCtrl = {
     try {
       const { screenId } = req.params;
       const { nameScreen, imageScreen, lenguage } = req.body;
-      // console.log("lenguage : ", req.body);
+      console.log("lenguage : ", req.body);
 
       // Find the user by ID
       const user = await UserModel.findById(req.tokenData._id);
