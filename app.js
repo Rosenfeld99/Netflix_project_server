@@ -10,13 +10,11 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    // origin: "https://movies-eli.netlify.app/",
     origin: "*",
     methods: "GET,POST,PUT,DELETE,PATCH",
     credentials: true,
   })
 );
-// app.use(cors())
 
 app.use(express.static(path.join(__dirname, "public")));
 

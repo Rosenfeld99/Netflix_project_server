@@ -37,7 +37,7 @@ exports.authCtrl = {
 
       // send email to , from end subject litel html
       const mailOptions = {
-        from: "770basha@gmail.com ",
+        from: "eliyahumeir12@gmail.com",
         to: user.email,
         subject: "Email Verification",
         html: `<p>Please click the following link to verify your email:</p><a href="${SECRET.URL_BASED}verify/${verificationToken}">Verify Email</a>`,
@@ -136,24 +136,3 @@ exports.authCtrl = {
     res.json({ status: true });
   },
 };
-// register: async (req, res) => {
-//   const validBody = validateUser(req.body);
-//   if (validBody.error) {
-//     return res.status(400).json(validBody.error.details);
-//   }
-//   try {
-//     const user = new UserModel(req.body);
-//     user.password = await bcrypt.hash(user.password, 10);
-//     await user.save();
-//     user.password = "*****";
-//     res.status(201).json(user);
-//   } catch (err) {
-//     if (err.code == 11000) {
-//       return res
-//         .status(401)
-//         .json({ err: "Email already in system", code: 11000 });
-//     }
-//     console.log(err);
-//     res.status(502).json({ err });
-//   }
-// },
